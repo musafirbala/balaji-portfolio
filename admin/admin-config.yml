@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/balajiganapathy-website
+  repo: musafirbala/balaji-portfolio
   branch: main
   base_url: https://balajiganapathy.com
   auth_endpoint: api/auth
