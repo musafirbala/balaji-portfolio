@@ -1,0 +1,203 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/balajiganapathy-website
+  branch: main
+  base_url: https://balajiganapathy.com
+  auth_endpoint: api/auth
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://balajiganapathy.com
+logo_url: https://balajiganapathy.com/logo.png
+
+collections:
+  # Site Settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "content/site-info.json"
+        label: "Site Information"
+        name: "site_info"
+        fields:
+          - {label: "Site Title", name: "title", widget: "string", default: "Balaji Ganapathy"}
+          - {label: "Site Description", name: "description", widget: "text"}
+          - {label: "Contact Email", name: "email", widget: "string"}
+          - {label: "LinkedIn URL", name: "linkedin", widget: "string"}
+          - {label: "Phone", name: "phone", widget: "string", required: false}
+
+  # Leader Page Content
+  - name: "leader"
+    label: "Leader Page"
+    files:
+      - file: "content/leader.json"
+        label: "Leader Page Content"
+        name: "leader_content"
+        fields:
+          # Section 1: Hero
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Headline", name: "headline", widget: "string"}
+              - {label: "Subheading", name: "subhead", widget: "string"}
+              - {label: "Introduction", name: "intro", widget: "text"}
+              - {label: "Background Image", name: "background_image", widget: "image", required: false}
+          
+          # Section 2: Impact Metrics
+          - label: "Impact Section"
+            name: "impact"
+            widget: "object"
+            fields:
+              - {label: "Section Headline", name: "headline", widget: "string"}
+              - label: "Metrics"
+                name: "metrics"
+                widget: "list"
+                fields:
+                  - {label: "Number", name: "number", widget: "string"}
+                  - {label: "Label", name: "label", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Background Image", name: "background_image", widget: "image", required: false}
+          
+          # Section 3: Vision & Values
+          - label: "Vision Section"
+            name: "vision"
+            widget: "object"
+            fields:
+              - {label: "Section Headline", name: "headline", widget: "string"}
+              - label: "Values"
+                name: "values"
+                widget: "list"
+                fields:
+                  - {label: "Icon Emoji", name: "icon", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+              - label: "Recognition"
+                name: "recognition"
+                widget: "object"
+                fields:
+                  - {label: "Board Service", name: "board_service", widget: "text"}
+                  - {label: "Speaking Platforms", name: "speaking_platforms", widget: "text"}
+              - {label: "Background Image", name: "background_image", widget: "image", required: false}
+
+  # Advisor Page Content
+  - name: "advisor"
+    label: "Advisor Page"
+    files:
+      - file: "content/advisor.json"
+        label: "Advisor Page Content"
+        name: "advisor_content"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Headline", name: "headline", widget: "string"}
+              - {label: "Subheading", name: "subhead", widget: "string"}
+              - {label: "Background Image", name: "background_image", widget: "image", required: false}
+          
+          - label: "Expertise Areas"
+            name: "expertise"
+            widget: "list"
+            fields:
+              - {label: "Icon Emoji", name: "icon", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          
+          - label: "Advisory Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Service Title", name: "title", widget: "string"}
+              - {label: "Service Description", name: "description", widget: "text"}
+          
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Author", name: "author", widget: "string"}
+
+  # Speaker Page Content
+  - name: "speaker"
+    label: "Speaker Page"
+    files:
+      - file: "content/speaker.json"
+        label: "Speaker Page Content"
+        name: "speaker_content"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Headline", name: "headline", widget: "string"}
+              - {label: "Subheading", name: "subhead", widget: "string"}
+              - {label: "Background Image", name: "background_image", widget: "image", required: false}
+          
+          - label: "Speaking Topics"
+            name: "topics"
+            widget: "list"
+            fields:
+              - {label: "Topic Title", name: "title", widget: "string"}
+              - {label: "Topic Description", name: "description", widget: "text"}
+          
+          - label: "Notable Engagements"
+            name: "engagements"
+            widget: "list"
+            fields:
+              - {label: "Venue/Organization", name: "venue", widget: "string"}
+              - {label: "Topic/Description", name: "topic", widget: "text"}
+          
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Author", name: "author", widget: "string"}
+
+  # Coach Page Content
+  - name: "coach"
+    label: "Coach Page"
+    files:
+      - file: "content/coach.json"
+        label: "Coach Page Content"
+        name: "coach_content"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Headline", name: "headline", widget: "string"}
+              - {label: "Subheading", name: "subhead", widget: "string"}
+              - {label: "Background Image", name: "background_image", widget: "image", required: false}
+          
+          - {label: "Coaching Approach", name: "approach", widget: "text"}
+          
+          - label: "Focus Areas"
+            name: "focus_areas"
+            widget: "list"
+            fields:
+              - {label: "Area Title", name: "title", widget: "string"}
+              - {label: "Area Description", name: "description", widget: "text"}
+          
+          - label: "Target Audiences"
+            name: "audiences"
+            widget: "list"
+            fields:
+              - {label: "Icon Emoji", name: "icon", widget: "string"}
+              - {label: "Audience Title", name: "title", widget: "string"}
+              - {label: "Audience Description", name: "description", widget: "text"}
+          
+          - label: "Coaching Programs"
+            name: "programs"
+            widget: "list"
+            fields:
+              - {label: "Program Title", name: "title", widget: "string"}
+              - {label: "Program Description", name: "description", widget: "text"}
+          
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Author", name: "author", widget: "string"}
