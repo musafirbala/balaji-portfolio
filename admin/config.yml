@@ -5,8 +5,18 @@ backend:
   base_url: https://balajiganapathy.com
   auth_endpoint: api/auth
 
+# Required root-level media folders
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Optional Media Library customization
+media_library:
+  name: uploadcare
+
+site_url: https://balajiganapathy.com
+logo_url: https://balajiganapathy.com/logo.png
+
 collections:
-  # Site Settings
   - name: "settings"
     label: "Site Settings"
     files:
