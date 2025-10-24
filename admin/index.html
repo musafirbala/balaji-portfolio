@@ -7,6 +7,11 @@
   <title>Content Manager - Balaji Ganapathy Website</title>
   <link href="config.yml" type="text/yaml" rel="cms-config-url">
 </head>
+  <script>
+  window.CMS_MANUAL_INIT = true;
+  CMS.init();
+  console.log('CMS initialized manually!');
+</script>
 <body>
   <!-- Decap CMS Script -->
   <script src="https://unpkg.com/decap-cms@^3.1.1/dist/decap-cms.js"></script>
