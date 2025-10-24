@@ -20,7 +20,17 @@ export async function onRequestGet(context) {
   });
   
   const data = await tokenResponse.json();
-  
+  if (!data.access_token && data.error) {
+  return new Response(`<div>Error: ${data.error_description || data.error}</div>`, {
+    headers: { 'Content-Type': 'text/html' }
+  });
+}
+
+if (!context.env.GITHUB_CLIENT_ID || !context.env.GITHUB_CLIENT_SECRET) {
+  return new Response('<div>MISSING CLIENT ENV VARS</div>', {
+    headers: { 'Content-Type': 'text/html' }
+  });
+}
   const script = `
     <script>
       window.opener.postMessage({
