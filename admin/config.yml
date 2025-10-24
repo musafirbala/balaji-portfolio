@@ -7,7 +7,6 @@ backend:
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
-
 site_url: https://balajiganapathy.com
 logo_url: https://balajiganapathy.com/logo.png
 
